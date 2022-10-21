@@ -30,9 +30,10 @@ class TestBookAttraction:
         # Filling out user info page
         user_info_page = UserInfoPage(page1)
         user_info_page.fillOutForm("Neil", "Villegas", "neilvillegas@gmail.com", "7785551212")
+        total_price = user_info_page.get_total_price()
         user_info_page.proceed_payment()
 
         # Checking Payment Page
         payment_page = PaymentPage(page1)
         payment_page.fillOutCreditCardForm("Neil Villegas", "4519142289341212", "01/23", "123")
-        expect(payment_page.total_price).to_contain_text(["CAD 138.50"])
+        expect(payment_page.total_price).to_contain_text([total_price])

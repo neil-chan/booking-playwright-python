@@ -23,6 +23,9 @@ class UserInfoPage(Base):
         self.inputEmail(email)
         self.confirmEmail(email)
         self.inputPhoneNumber(phone)
+
+    def get_total_price(self):
+        return self.page.get_by_test_id("price-breakdown-total").nth(2).get_attribute("value")
     
     def proceed_payment(self):
         self.page.get_by_role("button", name="Next").click()
