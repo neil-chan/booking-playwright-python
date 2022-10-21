@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  booking-playwright:
+    image: booking-playwright:latest
+    build: ./
+    # command: pytest
