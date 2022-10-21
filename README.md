@@ -10,6 +10,7 @@
 > playwright install
 5. Run the test case: use command with --headed if wants to run with actual browser
 > python3 -m pytest --headed tests/test_book_attraction.py
+> 
 > python3 -m pytest tests/test_book_attraction.py
 
 
